@@ -17,7 +17,6 @@
 <% 
 
 	EmaillistDAO edao = new EmaillistDAO();
-	EmailVO evo = new EmailVO();
 	List<EmailVO> l = edao.getList();
 	for(EmailVO e : l) { %>
 		<table border="1" cellpadding="5" cellspacing="2">
