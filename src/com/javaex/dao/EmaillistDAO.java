@@ -21,7 +21,7 @@ public class EmaillistDAO {
 		connect();
 		try {
 			// 3. SQL문 준비 / 바인딩 / 실행
-			String query = "insert into emaillist values(seq_emaillist_num.nextval, ? , ? , ? )"; // pstmt 객체를 사용하면 변수명 대신
+			String query = "insert into emaillist values(seq_emaillist_no.nextval, ? , ? , ? )"; // pstmt 객체를 사용하면 변수명 대신
 																							// ? 를 사용하여 삽입 할 수 있다.
 			pstmt = conn.prepareStatement(query); // conn 객체가 쿼리를 받아서 pstmt 라는 객체로 만들어 뱉어냈다
 			pstmt.setString(1, vo.getLastName()); // 쿼리의 ? 인덱스에 값을 채워 주고있다.
@@ -53,12 +53,12 @@ public class EmaillistDAO {
 			// 4.결과처리
 			while (rs.next()) {
 				EmailVO vo = new EmailVO();
-				int num = rs.getInt("num");
+				int no = rs.getInt("no");
 				String lastName = rs.getString("last_name");
 				String firstName = rs.getString("first_name");
 				String email = rs.getString("email");
 
-				vo.setNum(num);
+				vo.setNum(no);
 				vo.setLastName(lastName);
 				vo.setFirstName(firstName);
 				vo.setEmail(email);

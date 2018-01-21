@@ -2,7 +2,7 @@ package com.javaex.vo;
 
 public class EmailVO {
 
-	private int num;
+	private int no;
 	private String lastName;
 	private String firstName;
 	private String email;
@@ -13,18 +13,18 @@ public class EmailVO {
 
 	public EmailVO(int num, String lastName, String firstName, String email) {
 		super();
-		this.num = num;
+		this.no = num;
 		this.lastName = lastName;
 		this.firstName = firstName;
 		this.email = email;
 	}
 
 	public int getNum() {
-		return num;
+		return no;
 	}
 
 	public void setNum(int num) {
-		this.num = num;
+		this.no = num;
 	}
 
 	public String getLastName() {
@@ -53,7 +53,7 @@ public class EmailVO {
 
 	@Override
 	public String toString() {
-		return "EmailVO [num=" + num + ", lastName=" + lastName + ", firstName=" + firstName + ", email=" + email + "]";
+		return "EmailVO [num=" + no + ", lastName=" + lastName + ", firstName=" + firstName + ", email=" + email + "]";
 	}
 
 
