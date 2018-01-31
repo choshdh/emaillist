@@ -43,13 +43,13 @@ public class EmaillistDAO {
 	public List<EmailVO> getList() {
 		// 0. import java.sql.*;
 		connect();
+		List<EmailVO> l = new ArrayList<EmailVO>(); //DB 에서 받아오는 테이블의 레코드 값들을 JAVA 에서 사용 할 수 있게 List 객체에 BookVO 객체 별로 담는다
 		try {
 			// 3. SQL문 준비 / 바인딩 / 실행
 			String query = "select * from emaillist";
 			pstmt = conn.prepareStatement(query);
 			rs = pstmt.executeQuery(); // select만 유일하게 executeQuery() 함수를 사용한다.
 			
-			List<EmailVO> l = new ArrayList<EmailVO>(); //DB 에서 받아오는 테이블의 레코드 값들을 JAVA 에서 사용 할 수 있게 List 객체에 BookVO 객체 별로 담는다
 			// 4.결과처리
 			while (rs.next()) {
 				EmailVO vo = new EmailVO();
@@ -65,17 +65,15 @@ public class EmaillistDAO {
 				
 				l.add(vo);
 			}
-			return l;
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("error:" + e);
-			return null;
 			
 		} finally {
 			close();
 		}
-
+		return l;
 	}
 	
 	
